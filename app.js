@@ -63,9 +63,19 @@
   function setPageTheme(theme) {
     const isDark = theme === 'dark';
     const targetTheme = isDark ? 'dark' : 'light';
+    const removeTheme = isDark ? 'light' : 'dark';
     
-    // Apply attribute to document root
+    // Apply attribute and class to document root
     document.documentElement.setAttribute('data-theme', targetTheme);
+    document.documentElement.classList.remove(`theme-${removeTheme}`);
+    document.documentElement.classList.add(`theme-${targetTheme}`);
+
+    // Apply attribute and class to body as well for WebKit/Safari robustness
+    if (document.body) {
+      document.body.setAttribute('data-theme', targetTheme);
+      document.body.classList.remove(`theme-${removeTheme}`);
+      document.body.classList.add(`theme-${targetTheme}`);
+    }
 
     // Update segmented button UI states
     if (btnThemeLight && btnThemeDark) {
@@ -87,6 +97,9 @@
     } catch (e) {
       /* ignore storage exception */
     }
+
+    // Force browser style recalculation
+    void document.documentElement.offsetHeight;
   }
 
   // Bind click handlers directly to both options

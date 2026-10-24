@@ -9,7 +9,11 @@
    Tokens & Color Variables
    -------------------------------------------------------------------------- */
 :root,
-html[data-theme="light"] {
+html[data-theme="light"],
+body[data-theme="light"],
+html.theme-light,
+body.theme-light {
+  color-scheme: light;
   --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
@@ -81,7 +85,11 @@ html[data-theme="light"] {
 /* --------------------------------------------------------------------------
    DARK MODE: Midnight Peacock Oceanic Theme
    -------------------------------------------------------------------------- */
-html[data-theme="dark"] {
+html[data-theme="dark"],
+body[data-theme="dark"],
+html.theme-dark,
+body.theme-dark {
+  color-scheme: dark;
   --bg-page: #030d14;
   --bg-surface: #071924;
   --bg-surface-subtle: #0d2535;
@@ -186,14 +194,16 @@ body {
 }
 
 /* Light mode: crisp, high-white background with subtle cyber circuitry */
-html[data-theme="light"] .parallax-img {
+html[data-theme="light"] .parallax-img,
+.theme-light .parallax-img {
   opacity: 0.11;
   mix-blend-mode: multiply;
   filter: contrast(1.3) brightness(1.15);
 }
 
 /* Dark mode: richer visibility for immersive dark cyber aesthetic */
-html[data-theme="dark"] .parallax-img {
+html[data-theme="dark"] .parallax-img,
+.theme-dark .parallax-img {
   opacity: 0.25;
 }
 
@@ -207,7 +217,8 @@ html[data-theme="dark"] .parallax-img {
   z-index: 1;
 }
 
-html[data-theme="light"] .parallax-overlay {
+html[data-theme="light"] .parallax-overlay,
+.theme-light .parallax-overlay {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.88) 0%,
@@ -217,7 +228,8 @@ html[data-theme="light"] .parallax-overlay {
   );
 }
 
-html[data-theme="dark"] .parallax-overlay {
+html[data-theme="dark"] .parallax-overlay,
+.theme-dark .parallax-overlay {
   background: linear-gradient(
     180deg,
     rgba(3, 13, 20, 0.7) 0%,
@@ -242,11 +254,13 @@ html[data-theme="dark"] .parallax-overlay {
   transition: opacity var(--transition-smooth);
 }
 
-html[data-theme="light"] .ambient-glow {
+html[data-theme="light"] .ambient-glow,
+.theme-light .ambient-glow {
   opacity: 0.4;
 }
 
-html[data-theme="dark"] .ambient-glow {
+html[data-theme="dark"] .ambient-glow,
+.theme-dark .ambient-glow {
   background: radial-gradient(ellipse at 50% -15%, rgba(34, 211, 238, 0.18) 0%, rgba(6, 182, 212, 0.06) 60%, transparent 80%);
 }
 
@@ -427,7 +441,8 @@ code, kbd, samp, pre {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
-html[data-theme="dark"] .theme-seg-btn.active {
+html[data-theme="dark"] .theme-seg-btn.active,
+.theme-dark .theme-seg-btn.active {
   background: var(--border-subtle);
   color: var(--peacock-vibrant);
 }
