@@ -16,10 +16,10 @@ html[data-theme="light"] {
   /* --- LIGHT MODE: Crisp White + Peacock Blue --- */
   --bg-page: #ffffff;
   --bg-surface: #ffffff;
-  --bg-surface-subtle: #f0fdfa;
+  --bg-surface-subtle: #f8fafc;
   --bg-surface-elevated: #ffffff;
 
-  --border-subtle: #e2eef2;
+  --border-subtle: #e5edf0;
   --border-strong: #ccfbf1;
   --border-focus: #0891b2;
 
@@ -33,9 +33,9 @@ html[data-theme="light"] {
   --peacock-vibrant: #0891b2;
   --peacock-cyan: #06b6d4;
   --peacock-light: #ecfeff;
-  --peacock-wash: #f0fdfa;
-  --peacock-pill-bg: rgba(6, 182, 212, 0.08);
-  --peacock-pill-border: rgba(6, 182, 212, 0.25);
+  --peacock-wash: #f8fafc;
+  --peacock-pill-bg: rgba(6, 182, 212, 0.06);
+  --peacock-pill-border: rgba(6, 182, 212, 0.2);
 
   --title-color: #004e5d;
   --accent-gradient: linear-gradient(135deg, #004e5d 0%, #007791 50%, #0891b2 100%);
@@ -185,10 +185,11 @@ body {
   transition: opacity 0.4s ease;
 }
 
-/* Light mode: balanced visibility of cyber circuitry background */
+/* Light mode: crisp, high-white background with subtle cyber circuitry */
 html[data-theme="light"] .parallax-img {
-  opacity: 0.22;
+  opacity: 0.11;
   mix-blend-mode: multiply;
+  filter: contrast(1.3) brightness(1.15);
 }
 
 /* Dark mode: richer visibility for immersive dark cyber aesthetic */
@@ -209,10 +210,10 @@ html[data-theme="dark"] .parallax-img {
 html[data-theme="light"] .parallax-overlay {
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.7) 0%,
-    rgba(255, 255, 255, 0.4) 30%,
-    rgba(255, 255, 255, 0.55) 60%,
-    rgba(255, 255, 255, 0.8) 100%
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(255, 255, 255, 0.68) 30%,
+    rgba(255, 255, 255, 0.80) 60%,
+    rgba(255, 255, 255, 0.94) 100%
   );
 }
 
@@ -239,6 +240,10 @@ html[data-theme="dark"] .parallax-overlay {
   pointer-events: none;
   z-index: 0;
   transition: opacity var(--transition-smooth);
+}
+
+html[data-theme="light"] .ambient-glow {
+  opacity: 0.4;
 }
 
 html[data-theme="dark"] .ambient-glow {
